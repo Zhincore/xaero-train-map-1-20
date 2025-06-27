@@ -89,7 +89,7 @@ repositories {
 dependencies {
 
     implementation "maven.modrinth:xaeros-world-map:1.39.9_NeoForge_1.21"
-    implementation "maven.modrinth:journeymap:1.21.1-6.0.0-beta.52+neoforge"
+    runtimeOnly "maven.modrinth:better-modlist:1.1.19"
     implementation("com.simibubi.create:create-${minecraft_version}:${create_version}:slim") { transitive = false }
     implementation("net.createmod.ponder:Ponder-NeoForge-${minecraft_version}:${ponder_version}")
     compileOnly("dev.engine-room.flywheel:flywheel-neoforge-api-${minecraft_version}:${flywheel_version}")
