@@ -1,11 +1,15 @@
 {
   "required": true,
   "minVersion": "0.8",
-  "package": "com.example.examplemod",
+  "package": "net.foxy.xaerotrainmap.mixin",
   "compatibilityLevel": "JAVA_21",
-  "client": [],
+  "client": [
+    "GuiMapMixin",
+    "StationScreenMixin"
+  ],
   "injectors": {
     "defaultRequire": 1
   },
-  "mixins": []
+  "mixins": [
+  ]
 }
