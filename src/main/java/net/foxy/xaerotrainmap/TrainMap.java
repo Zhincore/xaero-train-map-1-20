@@ -15,7 +15,7 @@ import net.minecraft.client.renderer.Rect2i;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.FormattedText;
 import net.minecraft.util.Mth;
-import net.neoforged.neoforge.client.event.InputEvent.MouseButton.Pre;
+import net.minecraftforge.client.event.InputEvent.MouseButton.Pre;
 import xaero.map.gui.GuiMap;
 
 import java.util.List;
@@ -80,7 +80,7 @@ public class TrainMap {
 		//LogUtils.getLogger().warn(bounds.getX() + " " + bounds.getY() + " " + bounds.getWidth() + " " + bounds.getHeight());
 		//LogUtils.getLogger().warn(String.valueOf(CreateClient.RAILWAYS.trains.values()));
 		List<FormattedText> tooltip =
-			TrainMapManager.renderAndPick(graphics, Mth.floor(mPosX), Mth.floor(mPosZ), false, bounds);
+			TrainMapManager.renderAndPick(graphics, Mth.floor(mPosX), Mth.floor(mPosZ), pt, false, bounds);
 
 		pose.popPose();
 

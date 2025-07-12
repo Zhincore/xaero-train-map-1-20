@@ -17,7 +17,8 @@ public class StationScreenMixin {
     @Inject(
             method = "mapModsPresent",
             at = @At("HEAD"),
-            cancellable = true
+            cancellable = true,
+            remap = false
     )
     public void renderTrain(CallbackInfoReturnable<Boolean> cir) {
         cir.setReturnValue(true);

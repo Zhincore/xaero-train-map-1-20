@@ -13,32 +13,50 @@ import xaero.map.gui.GuiMap;
 
 @Mixin(GuiMap.class)
 public class GuiMapMixin extends Screen {
-    @Shadow private double scale;
 
-    @Shadow private double cameraZ;
+  @Shadow(remap = false)
+  private double scale;
 
-    @Shadow private double cameraX;
+  @Shadow(remap = false)
+  private double cameraZ;
 
-    @Shadow private int mouseBlockPosX;
+  @Shadow(remap = false)
+  private double cameraX;
 
-    @Shadow private int mouseBlockPosZ;
+  @Shadow(remap = false)
+  private int mouseBlockPosX;
 
-    protected GuiMapMixin(Component title) {
-        super(title);
-    }
+  @Shadow(remap = false)
+  private int mouseBlockPosZ;
 
-    @Inject(
-            method = "render",
-            at = @At("TAIL")
-    )
-    public void renderTrain(GuiGraphics guiGraphics, int scaledMouseX,
-                            int scaledMouseY, float partialTicks, CallbackInfo ci) {
-        TrainMap.onRender(this, guiGraphics, scaledMouseX, scaledMouseY,
-                partialTicks, this.scale, this.cameraX, this.cameraZ, mouseBlockPosX, mouseBlockPosZ);
-    }
+  protected GuiMapMixin(Component title) {
+    super(title);
+  }
 
-    @Override
-    public boolean isPauseScreen() {
-        return false;
-    }
+  @Inject(method = "m_88315_", at = @At("TAIL"), remap = false)
+  public void renderTrain(
+    GuiGraphics guiGraphics,
+    int scaledMouseX,
+    int scaledMouseY,
+    float partialTicks,
+    CallbackInfo ci
+  ) {
+    TrainMap.onRender(
+      this,
+      guiGraphics,
+      scaledMouseX,
+      scaledMouseY,
+      partialTicks,
+      this.scale,
+      this.cameraX,
+      this.cameraZ,
+      mouseBlockPosX,
+      mouseBlockPosZ
+    );
+  }
+
+  @Override
+  public boolean isPauseScreen() {
+    return false;
+  }
 }
